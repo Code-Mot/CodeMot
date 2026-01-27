@@ -1,0 +1,14 @@
+import numpy as np
+from models.predict import predict_signal
+
+class AIStrategy:
+    def __init__(self, model):
+        self.model = model
+
+    def generate_signal(self, features):
+        prediction = predict_signal(self.model, features)
+        if prediction > 0.6:
+            return "BUY"
+        elif prediction < 0.4:
+            return "SELL"
+        return "HOLD"

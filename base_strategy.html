@@ -1,0 +1,9 @@
+class BaseStrategy:
+    def __init__(self, config):
+        self.config = config
+
+    def generate_signal(self, data):
+        raise NotImplementedError
+
+    def position_size(self, signal):
+        return 1
